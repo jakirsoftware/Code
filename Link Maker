@@ -1,8 +1,7 @@
-// Replace with your folder ID
-var FOLDER_ID = "1dKFmmzZiDXnuuyZaRDUphOIjLayesi8D";
-
 // Function to get all downloadable links from the folder and update the sheet
 function Links() {
+  // Replace with your folder ID
+var FOLDER_ID = "1dKFmmzZiDXnuuyZaRDUphOIjLayesi8D";
   try {
     // Access the folder by ID
     var folder = DriveApp.getFolderById(FOLDER_ID);
@@ -10,7 +9,7 @@ function Links() {
     
     // Access the sheet to update links
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Links");
-    sheet.getRange("D2:E").clearContent();  // Clear previous links
+    sheet.getRange("C2:D").clearContent();  // Clear previous links
     
     var row = 2; // Start from row 2
     while (files.hasNext()) {
@@ -19,8 +18,8 @@ function Links() {
       var downloadLink = "https://drive.google.com/uc?export=download&id=" + file.getId();
       
       // Write file name and download link to the sheet
-      sheet.getRange(row, 4).setValue(fileName);       // Column D for file name
-      sheet.getRange(row, 5).setValue(downloadLink);    // Column E for download link
+      sheet.getRange(row, 3).setValue(fileName);       // Column D for file name
+      sheet.getRange(row, 4).setValue(downloadLink);    // Column E for download link
       row++;
     }
   } catch (error) {
