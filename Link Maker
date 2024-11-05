@@ -1,5 +1,4 @@
-// Function to get all downloadable links from the folder and update the sheet
-function Links() {
+function Links Maker() {
   // Replace with your folder ID
 var FOLDER_ID = "1dKFmmzZiDXnuuyZaRDUphOIjLayesi8D";
   try {
